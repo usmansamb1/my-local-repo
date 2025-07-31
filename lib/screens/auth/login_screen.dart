@@ -177,11 +177,15 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _buildLogo() {
     return Container(
-      width: 120,
-      height: 120,
+      width: 160,
+      height: 140,
       decoration: BoxDecoration(
-        color: Colors.white,
-        shape: BoxShape.circle,
+        gradient: const LinearGradient(
+          colors: [Color(0xFFFFC107), Color(0xFF4CAF50), Color(0xFF2196F3)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
@@ -197,8 +201,8 @@ class _LoginScreenState extends State<LoginScreen> {
             Container(
               width: 60,
               height: 60,
-              decoration: const BoxDecoration(
-                color: AppTheme.primaryColor,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
                 shape: BoxShape.circle,
               ),
               child: const Icon(
@@ -207,20 +211,20 @@ class _LoginScreenState extends State<LoginScreen> {
                 size: 32,
               ),
             ),
-            const SizedBox(height: 4),
+            const SizedBox(height: 8),
             const Text(
-              'ساسكو',
+              'FuelApp',
               style: TextStyle(
-                color: AppTheme.primaryColor,
-                fontSize: 16,
+                color: Colors.white,
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const Text(
-              'SASCO',
+              'فيول آب',
               style: TextStyle(
-                color: AppTheme.primaryColor,
-                fontSize: 12,
+                color: Colors.white,
+                fontSize: 16,
                 fontWeight: FontWeight.w500,
               ),
             ),
