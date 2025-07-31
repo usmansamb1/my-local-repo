@@ -283,7 +283,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
             ),
             const Text(
-              'SASCO',
+              'FuelApp',
               style: TextStyle(
                 color: AppTheme.primaryColor,
                 fontSize: 10,

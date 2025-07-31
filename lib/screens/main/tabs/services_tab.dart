@@ -9,7 +9,7 @@ class ServicesTab extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppTheme.backgroundColor,
       appBar: AppBar(
-        title: const Text('Sasco Services'),
+        title: const Text('FuelApp Services'),
         backgroundColor: AppTheme.primaryColor,
         foregroundColor: Colors.white,
       ),

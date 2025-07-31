@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../theme/app_theme.dart';
+import '../../utils/constants.dart';
 import 'tabs/home_tab.dart';
 import 'tabs/services_tab.dart';
 import 'tabs/scan_tab.dart';
@@ -44,9 +45,14 @@ class _MainScreenState extends State<MainScreen> {
         child: BottomNavigationBar(
           currentIndex: _selectedIndex,
           onTap: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
+            if (index == 2) {
+              // Navigate to scan code screen
+              Navigator.pushNamed(context, Constants.scanCodeRoute);
+            } else {
+              setState(() {
+                _selectedIndex = index;
+              });
+            }
           },
           items: [
             const BottomNavigationBarItem(
@@ -57,7 +63,7 @@ class _MainScreenState extends State<MainScreen> {
             const BottomNavigationBarItem(
               icon: Icon(Icons.local_gas_station_outlined),
               activeIcon: Icon(Icons.local_gas_station),
-              label: 'Sasco Services',
+              label: 'FuelApp Services',
             ),
             BottomNavigationBarItem(
               icon: Container(

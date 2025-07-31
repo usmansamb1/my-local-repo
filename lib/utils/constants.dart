@@ -1,11 +1,14 @@
 class Constants {
-  static const String appName = 'SASCO';
+  static const String appName = 'FuelApp';
   
   // Routes
   static const String loginRoute = '/login';
   static const String registerRoute = '/register';
   static const String forgotPasswordRoute = '/forgot-password';
   static const String mainRoute = '/main';
+  static const String stationsMapRoute = '/stations-map';
+  static const String scanCodeRoute = '/scan-code';
+  static const String fuelAppQuickRoute = '/fuelapp-quick';
   
   // Storage Keys
   static const String tokenKey = 'auth_token';

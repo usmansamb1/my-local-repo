@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../utils/constants.dart';
+import '../../../theme/app_theme.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});
@@ -334,12 +336,12 @@ class HomeTab extends StatelessWidget {
                         children: [
                           _buildOfferCard(
                             'Did you know? 😊',
-                            'When you pay at SASCO\nstations using the Best Cashb...',
+                            'When you pay at FuelApp\nstations using the Best Cashb...',
                             const Color(0xFF00A19C),
                           ),
                           const SizedBox(width: 12),
                           _buildOfferCard(
-                            'Sasco Palm... Your Fa...',
+                            'FuelApp Palm... Your Fa...',
                             'An enjoyable experience and a\nvariety of products for everyo...',
                             const Color(0xFF0D7A77),
                             isDark: true,
@@ -386,12 +388,12 @@ class HomeTab extends StatelessWidget {
                         crossAxisSpacing: 16,
                         childAspectRatio: 0.8,
                         children: [
-                          _buildServiceItem('Stations', Icons.local_gas_station, const Color(0xFFE6F7F7)),
-                          _buildServiceItem('SASCO Quick', Icons.shopping_cart, const Color(0xFFE6F7F7)),
-                          _buildServiceItem('Self-Fueling', Icons.local_gas_station, const Color(0xFFFFF4E6)),
-                          _buildServiceItem('ATMs', Icons.atm, const Color(0xFFE6F7F7)),
-                          _buildServiceItem('SIMs', Icons.sim_card, const Color(0xFFE6F7F7)),
-                          _buildServiceItem('Carwash', Icons.local_car_wash, const Color(0xFFE6F7F7)),
+                          _buildServiceItem(context, 'Stations', Icons.local_gas_station, const Color(0xFFE6F7F7)),
+                          _buildServiceItem(context, 'FuelApp Quick', Icons.shopping_cart, const Color(0xFFE6F7F7)),
+                          _buildServiceItem(context, 'Self-Fueling', Icons.local_gas_station, const Color(0xFFFFF4E6)),
+                          _buildServiceItem(context, 'ATMs', Icons.atm, const Color(0xFFE6F7F7)),
+                          _buildServiceItem(context, 'SIMs', Icons.sim_card, const Color(0xFFE6F7F7)),
+                          _buildServiceItem(context, 'Carwash', Icons.local_car_wash, const Color(0xFFE6F7F7)),
                         ],
                       ),
                     ),
@@ -566,34 +568,115 @@ class HomeTab extends StatelessWidget {
     );
   }
 
-  Widget _buildServiceItem(String title, IconData icon, Color backgroundColor) {
-    return Column(
-      children: [
-        Container(
-          width: 60,
-          height: 60,
-          decoration: BoxDecoration(
-            color: backgroundColor,
-            borderRadius: BorderRadius.circular(16),
+  Widget _buildServiceItem(BuildContext context, String title, IconData icon, Color backgroundColor) {
+    return GestureDetector(
+      onTap: () {
+        if (title == 'Stations') {
+          Navigator.pushNamed(context, Constants.stationsMapRoute);
+        } else if (title == 'FuelApp Quick') {
+          Navigator.pushNamed(context, Constants.fuelAppQuickRoute);
+        } else if (title == 'Self-Fueling' || title == 'ATMs' || title == 'SIMs' || title == 'Carwash') {
+          _showServicesPopup(context);
+        }
+      },
+      child: Column(
+        children: [
+          Container(
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+              color: backgroundColor,
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Icon(
+              icon,
+              color: title == 'Self-Fueling' ? const Color(0xFFFF9500) : const Color(0xFF00A19C),
+              size: 28,
+            ),
           ),
-          child: Icon(
-            icon,
-            color: title == 'Self-Fueling' ? const Color(0xFFFF9500) : const Color(0xFF00A19C),
-            size: 28,
+          const SizedBox(height: 8),
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 12,
+              color: Color(0xFF2D3748),
+            ),
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
           ),
+        ],
+      ),
+    );
+  }
+  
+  void _showServicesPopup(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      builder: (context) => Container(
+        margin: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
         ),
-        const SizedBox(height: 8),
-        Text(
-          title,
-          style: const TextStyle(
-            fontSize: 12,
-            color: Color(0xFF2D3748),
-          ),
-          textAlign: TextAlign.center,
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              width: 40,
+              height: 4,
+              margin: const EdgeInsets.only(top: 12),
+              decoration: BoxDecoration(
+                color: Colors.grey[300],
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(16),
+              child: Text(
+                'Choose service',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.local_gas_station, color: AppTheme.primaryColor),
+              title: const Text('FuelApp Quick request'),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, Constants.fuelAppQuickRoute);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.car_repair, color: AppTheme.primaryColor),
+              title: const Text('Road Services'),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () {
+                Navigator.pop(context);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Road Services coming soon')),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.store, color: AppTheme.primaryColor),
+              title: const Text('Svc Store'),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () {
+                Navigator.pop(context);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Service Store coming soon')),
+                );
+              },
+            ),
+            const SizedBox(height: 16),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
