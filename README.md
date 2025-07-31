@@ -21,8 +21,8 @@ samples, guidance on mobile development, and a full API reference.
 
 | File | Last Modified |
 |------|---------------|
-| [CLAUDE.md](CLAUDE.md) | Today |
+| [CLAUDE.md](CLAUDE.md) | -1 days ago |
 
-_Last updated: 2025-07-31 08:55:48 UTC_
+_Last updated: 2025-07-31 05:57:38 UTC_
 
 <!-- MARKDOWN_FILES_END -->
