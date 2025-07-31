@@ -1,6 +1,6 @@
-# fuelapp_v2
+# FuelApp by JOIL
 
-A new Flutter project.
+A fuel station mobile application built with Flutter.
 
 ## Getting Started
 
