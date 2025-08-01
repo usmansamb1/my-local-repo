@@ -10,6 +10,13 @@ class Constants {
   static const String scanCodeRoute = '/scan-code';
   static const String fuelAppQuickRoute = '/fuelapp-quick';
   
+  // Wallet Routes
+  static const String invoicesRoute = '/invoices';
+  static const String invoiceDetailsRoute = '/invoice-details';
+  static const String addBalanceRoute = '/add-balance';
+  static const String paymentMethodsRoute = '/payment-methods';
+  static const String transactionDetailsRoute = '/transaction-details';
+  
   // Storage Keys
   static const String tokenKey = 'auth_token';
   static const String userKey = 'user_data';

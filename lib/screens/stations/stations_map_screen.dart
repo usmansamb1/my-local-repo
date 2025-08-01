@@ -79,7 +79,7 @@ class _StationsMapScreenState extends State<StationsMapScreen> {
                     const Padding(
                       padding: EdgeInsets.all(16),
                       child: Text(
-                        'Stations Locations Page (Does Page Load for All the Stations except SASCO Outlet)',
+                        'Stations Locations Page (Does Page Load for All the Stations except FuelApp Outlet)',
                         style: TextStyle(
                           fontSize: 14,
                           color: AppTheme.textSecondary,

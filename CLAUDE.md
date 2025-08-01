@@ -45,7 +45,7 @@ flutter test test/widget_test.dart
 
 ## Architecture
 
-This is a SASCO fuel station mobile app built with Flutter using a pure native approach with minimal external dependencies.
+This is a FuelApp fuel station mobile app built with Flutter using a pure native approach with minimal external dependencies.
 
 ### Navigation Architecture
 The app uses Flutter's native Navigator 2.0 with named routes defined in `lib/utils/constants.dart`. The navigation flow:
@@ -70,7 +70,7 @@ The app implements 5 screens from a PDF design:
 
 ### Theme & Styling
 - Custom theme defined in `lib/theme/app_theme.dart`
-- SASCO brand colors: Primary #00A19C (teal), Secondary #0D7A77
+- FuelApp brand colors: Primary #00A19C (teal), Secondary #0D7A77
 - Material 3 design system
 - RTL support ready for Arabic localization
 
