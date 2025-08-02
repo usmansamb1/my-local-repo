@@ -230,13 +230,13 @@ class _VehiclesScreenState extends State<VehiclesScreen> {
   Color _getVehicleTypeColor(String type) {
     switch (type.toLowerCase()) {
       case 'sedan':
-        return Colors.blue;
+        return AppTheme.primaryColor;
       case 'suv':
-        return Colors.green;
+        return AppTheme.accentGreen;
       case 'truck':
         return Colors.orange;
       case 'hatchback':
-        return Colors.purple;
+        return AppTheme.secondaryColor;
       default:
         return AppTheme.primaryColor;
     }

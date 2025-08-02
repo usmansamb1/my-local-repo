@@ -202,11 +202,11 @@ class _InvoicesScreenState extends State<InvoicesScreen> with SingleTickerProvid
   Color _getStatusColor(String status) {
     switch (status) {
       case 'paid':
-        return Colors.green;
+        return AppTheme.accentGreen;
       case 'pending':
         return Colors.orange;
       case 'overdue':
-        return Colors.red;
+        return AppTheme.accentRed;
       case 'cancelled':
         return Colors.grey;
       default:

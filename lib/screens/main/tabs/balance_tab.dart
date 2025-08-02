@@ -497,7 +497,7 @@ class _BalanceTabState extends State<BalanceTab> with SingleTickerProviderStateM
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
-                        color: transaction.isCredit ? Colors.green : Colors.red,
+                        color: transaction.isCredit ? AppTheme.accentGreen : AppTheme.accentRed,
                       ),
                     ),
                     const SizedBox(height: 4),
@@ -531,13 +531,13 @@ class _BalanceTabState extends State<BalanceTab> with SingleTickerProviderStateM
       case 'fuel':
         return AppTheme.primaryColor;
       case 'topup':
-        return Colors.green;
+        return AppTheme.accentGreen;
       case 'payment':
-        return Colors.blue;
+        return AppTheme.secondaryColor;
       case 'refund':
         return Colors.orange;
       case 'points':
-        return Colors.purple;
+        return AppTheme.accentRed;
       default:
         return AppTheme.textSecondary;
     }
@@ -563,11 +563,11 @@ class _BalanceTabState extends State<BalanceTab> with SingleTickerProviderStateM
   Color _getStatusColor(String status) {
     switch (status) {
       case 'completed':
-        return Colors.green;
+        return AppTheme.accentGreen;
       case 'pending':
         return Colors.orange;
       case 'failed':
-        return Colors.red;
+        return AppTheme.accentRed;
       case 'cancelled':
         return Colors.grey;
       default:

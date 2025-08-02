@@ -28,7 +28,7 @@ class HomeTab extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    // Logo - placeholder for now
+                    // JOIL Logo with brand colors
                     Container(
                       width: 60,
                       height: 30,
@@ -36,15 +36,46 @@ class HomeTab extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: const Center(
-                        child: Text(
-                          'JOIL',
-                          style: TextStyle(
-                            color: Color(0xFF0D7A77),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
+                      child: Stack(
+                        children: [
+                          const Center(
+                            child: Text(
+                              'JOIL',
+                              style: TextStyle(
+                                color: AppTheme.primaryColor,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                letterSpacing: 1.2,
+                              ),
+                            ),
                           ),
-                        ),
+                          // Red accent dot
+                          Positioned(
+                            top: 4,
+                            right: 8,
+                            child: Container(
+                              width: 4,
+                              height: 4,
+                              decoration: const BoxDecoration(
+                                color: AppTheme.accentRed,
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                          ),
+                          // Green accent dot
+                          Positioned(
+                            bottom: 4,
+                            right: 8,
+                            child: Container(
+                              width: 4,
+                              height: 4,
+                              decoration: const BoxDecoration(
+                                color: AppTheme.accentGreen,
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     // Status icons
@@ -298,7 +329,7 @@ class HomeTab extends StatelessWidget {
                               'Wallet',
                               '﷼ 0',
                               Icons.wallet,
-                              const Color(0xFF00A19C),
+                              AppTheme.primaryColor,
                             ),
                           ),
                           const SizedBox(width: 12),
@@ -307,7 +338,7 @@ class HomeTab extends StatelessWidget {
                               'Points',
                               '0',
                               Icons.stars,
-                              const Color(0xFF48BB78),
+                              AppTheme.accentGreen,
                             ),
                           ),
                         ],

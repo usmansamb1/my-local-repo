@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static const Color primaryColor = Color(0xFF00A19C);
-  static const Color secondaryColor = Color(0xFF0D7A77);
-  static const Color backgroundColor = Color(0xFFF5F5F5);
+  // JOIL Brand Colors extracted from logo
+  static const Color primaryColor = Color(0xFF4AA9E8); // Light blue from JOIL logo
+  static const Color secondaryColor = Color(0xFF2E7BC6); // Darker blue for gradients
+  static const Color accentRed = Color(0xFFE53935); // Red dot from logo
+  static const Color accentGreen = Color(0xFF43A047); // Green dot from logo
+  static const Color backgroundColor = Color(0xFFF8FAFB);
   static const Color surfaceColor = Colors.white;
-  static const Color errorColor = Color(0xFFE53E3E);
-  static const Color textPrimary = Color(0xFF2D3748);
+  static const Color errorColor = Color(0xFFE53935); // Using JOIL red for errors
+  static const Color successColor = Color(0xFF43A047); // Using JOIL green for success
+  static const Color textPrimary = Color(0xFF1A202C);
   static const Color textSecondary = Color(0xFF718096);
   static const Color dividerColor = Color(0xFFE2E8F0);
+  
+  // Legacy colors for backward compatibility
+  @deprecated
+  static const Color oldPrimaryColor = Color(0xFF00A19C);
+  @deprecated  
+  static const Color oldSecondaryColor = Color(0xFF0D7A77);
   
   static ThemeData lightTheme() {
     return ThemeData(
@@ -20,6 +30,8 @@ class AppTheme {
         error: errorColor,
         background: backgroundColor,
         surface: surfaceColor,
+        onPrimary: Colors.white,
+        onSecondary: Colors.white,
       ),
       scaffoldBackgroundColor: backgroundColor,
       appBarTheme: const AppBarTheme(
@@ -84,6 +96,12 @@ class AppTheme {
         unselectedItemColor: textSecondary,
         type: BottomNavigationBarType.fixed,
         elevation: 8,
+      ),
+      
+      // Additional theme configurations for JOIL branding
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        backgroundColor: primaryColor,
+        foregroundColor: Colors.white,
       ),
     );
   }
