@@ -16,9 +16,9 @@ class AppTheme {
   
   // Legacy colors for backward compatibility
   @deprecated
-  static const Color oldPrimaryColor = Color(0xFF00A19C);
+  static const Color oldPrimaryColor = primaryColor ;//Color(0xFF00A19C);
   @deprecated  
-  static const Color oldSecondaryColor = Color(0xFF0D7A77);
+  static const Color oldSecondaryColor =primaryColor ;//Color(0xFF0D7A77);
   
   static ThemeData lightTheme() {
     return ThemeData(
