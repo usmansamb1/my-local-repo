@@ -14,13 +14,13 @@ class _ScanCodeScreenState extends State<ScanCodeScreen> {
   String? selectedVehicle;
   final ScrollController _scrollController = ScrollController();
   
-  final List<Vehicle> vehicles = [
-    Vehicle(model: 'Hyundai', plateNumber: '9876 ABC', isSelected: false),
-    Vehicle(model: 'Toyota Camry', plateNumber: '1234 XYZ', isSelected: false),
-    Vehicle(model: 'Honda Accord', plateNumber: '5678 DEF', isSelected: false),
-    Vehicle(model: 'Nissan Altima', plateNumber: '2468 GHI', isSelected: false),
-    Vehicle(model: 'Ford Fusion', plateNumber: '1357 JKL', isSelected: false),
-    Vehicle(model: 'Mazda 6', plateNumber: '9753 MNO', isSelected: false),
+  final List<ScanVehicle> vehicles = [
+    ScanVehicle(model: 'Hyundai', plateNumber: '9876 ABC', isSelected: false),
+    ScanVehicle(model: 'Toyota Camry', plateNumber: '1234 XYZ', isSelected: false),
+    ScanVehicle(model: 'Honda Accord', plateNumber: '5678 DEF', isSelected: false),
+    ScanVehicle(model: 'Nissan Altima', plateNumber: '2468 GHI', isSelected: false),
+    ScanVehicle(model: 'Ford Fusion', plateNumber: '1357 JKL', isSelected: false),
+    ScanVehicle(model: 'Mazda 6', plateNumber: '9753 MNO', isSelected: false),
   ];
 
   @override
@@ -251,12 +251,12 @@ class _ScanCodeScreenState extends State<ScanCodeScreen> {
   }
 }
 
-class Vehicle {
+class ScanVehicle {
   final String model;
   final String plateNumber;
   final bool isSelected;
   
-  Vehicle({
+  ScanVehicle({
     required this.model,
     required this.plateNumber,
     required this.isSelected,

@@ -17,6 +17,11 @@ class Constants {
   static const String paymentMethodsRoute = '/payment-methods';
   static const String transactionDetailsRoute = '/transaction-details';
   
+  // Vehicle Routes
+  static const String vehiclesRoute = '/vehicles';
+  static const String vehicleReportsRoute = '/vehicle-reports';
+  static const String addVehicleRoute = '/add-vehicle';
+  
   // Storage Keys
   static const String tokenKey = 'auth_token';
   static const String userKey = 'user_data';

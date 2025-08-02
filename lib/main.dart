@@ -13,8 +13,12 @@ import 'screens/wallet/invoice_details_screen.dart';
 import 'screens/wallet/add_balance_screen.dart';
 import 'screens/wallet/payment_methods_screen.dart';
 import 'screens/wallet/transaction_details_screen.dart';
+import 'screens/vehicles/vehicles_screen.dart';
+import 'screens/vehicles/vehicle_reports_screen.dart';
+import 'screens/vehicles/add_vehicle_screen.dart';
 import 'models/invoice.dart';
 import 'models/transaction.dart';
+import 'models/vehicle.dart';
 
 void main() {
   runApp(const MyApp());
@@ -62,6 +66,15 @@ class MyApp extends StatelessWidget {
             return MaterialPageRoute(
               builder: (context) => TransactionDetailsScreen(transaction: transaction),
             );
+          case Constants.vehiclesRoute:
+            return MaterialPageRoute(builder: (context) => const VehiclesScreen());
+          case Constants.vehicleReportsRoute:
+            final vehicle = settings.arguments as Vehicle;
+            return MaterialPageRoute(
+              builder: (context) => VehicleReportsScreen(vehicle: vehicle),
+            );
+          case Constants.addVehicleRoute:
+            return MaterialPageRoute(builder: (context) => const AddVehicleScreen());
           default:
             return MaterialPageRoute(builder: (context) => const LoginScreen());
         }

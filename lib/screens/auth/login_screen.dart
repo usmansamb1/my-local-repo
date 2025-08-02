@@ -28,19 +28,18 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future<void> _handleLogin() async {
-    if (_formKey.currentState!.validate()) {
+    // Temporarily removed validation for presentation purposes
+    setState(() {
+      _isLoading = true;
+    });
+
+    await Future.delayed(const Duration(milliseconds: 500));
+
+    if (mounted) {
       setState(() {
-        _isLoading = true;
+        _isLoading = false;
       });
-
-      await Future.delayed(Constants.mockDelay);
-
-      if (mounted) {
-        setState(() {
-          _isLoading = false;
-        });
-        Navigator.pushReplacementNamed(context, Constants.mainRoute);
-      }
+      Navigator.pushReplacementNamed(context, Constants.mainRoute);
     }
   }
 

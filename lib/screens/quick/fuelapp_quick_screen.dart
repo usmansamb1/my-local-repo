@@ -16,11 +16,11 @@ class _FuelAppQuickScreenState extends State<FuelAppQuickScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _isLoading = false;
   
-  final List<Vehicle> vehicles = [
-    Vehicle(model: 'Hyundai', plateNumber: '9876', icon: Icons.directions_car),
-    Vehicle(model: 'Toyota Camry', plateNumber: '1234', icon: Icons.directions_car),
-    Vehicle(model: 'Honda Accord', plateNumber: '5678', icon: Icons.directions_car),
-    Vehicle(model: 'Nissan Altima', plateNumber: '2468', icon: Icons.directions_car),
+  final List<QuickVehicle> vehicles = [
+    QuickVehicle(model: 'Hyundai', plateNumber: '9876', icon: Icons.directions_car),
+    QuickVehicle(model: 'Toyota Camry', plateNumber: '1234', icon: Icons.directions_car),
+    QuickVehicle(model: 'Honda Accord', plateNumber: '5678', icon: Icons.directions_car),
+    QuickVehicle(model: 'Nissan Altima', plateNumber: '2468', icon: Icons.directions_car),
   ];
 
   @override
@@ -364,12 +364,12 @@ class _FuelAppQuickScreenState extends State<FuelAppQuickScreen> {
   }
 }
 
-class Vehicle {
+class QuickVehicle {
   final String model;
   final String plateNumber;
   final IconData icon;
   
-  Vehicle({
+  QuickVehicle({
     required this.model,
     required this.plateNumber,
     required this.icon,
